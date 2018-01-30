@@ -4,9 +4,5 @@ class Tag < ActiveRecord::Base
   
   validates :name, presence: true
   validates :name, uniqueness: true
-
-  def slug
-    self.name.gsub(/[\W\s+]/, '-').downcase
-  end
   
 end
