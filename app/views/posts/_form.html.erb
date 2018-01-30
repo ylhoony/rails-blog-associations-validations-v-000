@@ -18,9 +18,8 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %><br>
 
-    <% @tags.each do |tag| %>
+    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name_with_initial %>
       
-    <% end %>
   </div>
 
 
