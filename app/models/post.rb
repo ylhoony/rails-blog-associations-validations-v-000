@@ -4,4 +4,9 @@ class Post < ActiveRecord::Base
   has_many :tags, through: :post_tags
 
   validates :name, :content, presence: true
+
+  def slug
+    self.name.gsub(/[\W\s+]/, '-').downcase
+  end
+  
 end
